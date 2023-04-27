@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'entity_statetax_list' %}">
+    statetax Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="sui_rate">sui_rate: </label>
+  <input class="form-control col-sm-10" id="sui_rate" type="text" name="sui_rate" value="{{ object.sui_rate }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="state">state: </label>
+  <input class="form-control col-sm-10" id="state" type="text" name="state" value="{{ object.state }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="sui_id">sui_id: </label>
+  <input class="form-control col-sm-10" id="sui_id" type="text" name="sui_id" value="{{ object.sui_id }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="state_id">state_id: </label>
+  <input class="form-control col-sm-10" id="state_id" type="text" name="state_id" value="{{ object.state_id }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

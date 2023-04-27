@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'entity_localitytax_list' %}">
+    localitytax Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>locality_rate</td><td>{{ object.locality_rate }}</td></tr>
+    <tr><td>locality</td><td>{{ object.locality }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

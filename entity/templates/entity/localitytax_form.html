@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'entity_localitytax_list' %}">
+    localitytax Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="locality_rate">locality_rate: </label>
+  <input class="form-control col-sm-10" id="locality_rate" type="text" name="locality_rate" value="{{ object.locality_rate }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="locality">locality: </label>
+  <input class="form-control col-sm-10" id="locality" type="text" name="locality" value="{{ object.locality }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

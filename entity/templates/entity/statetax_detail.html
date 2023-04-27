@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'entity_statetax_list' %}">
+    statetax Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>sui_rate</td><td>{{ object.sui_rate }}</td></tr>
+    <tr><td>state</td><td>{{ object.state }}</td></tr>
+    <tr><td>sui_id</td><td>{{ object.sui_id }}</td></tr>
+    <tr><td>state_id</td><td>{{ object.state_id }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
